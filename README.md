@@ -137,4 +137,4 @@ MIT License - [LICENSE](LICENSE)
 
 ---
 
-Made with ❤️ in Indonesia
+Developed by **RajailDev™**
