@@ -1,37 +1,53 @@
-# WHOME - Internet Provider Landing Page
+# WHOME - Internet Rumah Cepat & Stabil
+
+![WHOME Logo](public/logo.png)
 
 Platform marketing digital untuk WHOME Internet Provider, RT/RW Net berbasis di Tanjung Priok, Jakarta.
 
-## Tech Stack
+## 🚀 Live Demo
 
-- **Framework**: Next.js 14 (App Router)
-- **Language**: TypeScript
-- **Styling**: Tailwind CSS
-- **Database**: Supabase
-- **State**: Zustand
-- **Deployment**: Vercel
+- **Website**: [whome.vercel.app](https://whome.vercel.app)
+- **Admin**: [whome.vercel.app/admin](https://whome.vercel.app/admin)
 
-## Features
+## ✨ Features
 
-- Landing page dengan hero section modern
-- Pricing cards untuk 3 paket internet
-- Form pendaftaran dengan integrasi WhatsApp
-- Admin dashboard untuk kelola leads
-- Responsive design (mobile-first)
+- 🏠 **Landing Page** - Hero section modern dengan mesh gradient
+- 💰 **Pricing Cards** - 3 paket internet (Hemat, Keluarga, Pro)
+- 📝 **Registration Form** - Integrasi WhatsApp & Supabase
+- 📊 **Admin Dashboard** - Kelola data pelanggan
+- 📱 **Responsive** - Mobile-first design
 
-## Getting Started
+## 🛠️ Tech Stack
 
-### 1. Clone & Install
+| Technology | Purpose |
+|------------|---------|
+| Next.js 14 | Framework |
+| TypeScript | Language |
+| Tailwind CSS | Styling |
+| Supabase | Database |
+| Zustand | State Management |
+| Vercel | Deployment |
+
+## 📦 Installation
 
 ```bash
-git clone <repository-url>
+# Clone repository
+git clone https://github.com/mhmmdragilpy/whome.git
 cd whome
+
+# Install dependencies
 npm install
+
+# Setup environment variables
+cp .env.example .env.local
+
+# Run development server
+npm run dev
 ```
 
-### 2. Environment Variables
+## ⚙️ Environment Variables
 
-Buat file `.env.local`:
+Create `.env.local` file:
 
 ```env
 NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
@@ -39,12 +55,12 @@ NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
 NEXT_PUBLIC_WHATSAPP_ADMIN=6285117088518
 ```
 
-### 3. Database Setup
+## 🗄️ Database Setup
 
-Jalankan SQL berikut di Supabase SQL Editor:
+Run this SQL in Supabase SQL Editor:
 
 ```sql
--- Create tables
+-- Packages table
 CREATE TABLE packages (
   id TEXT PRIMARY KEY,
   name TEXT NOT NULL,
@@ -55,63 +71,34 @@ CREATE TABLE packages (
   created_at TIMESTAMPTZ DEFAULT NOW()
 );
 
+-- Leads table
 CREATE TABLE leads (
   id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
   full_name TEXT NOT NULL,
   whatsapp TEXT NOT NULL,
   address TEXT NOT NULL,
-  latitude DOUBLE PRECISION,
-  longitude DOUBLE PRECISION,
   package_id TEXT NOT NULL,
-  status TEXT DEFAULT 'new_lead' CHECK (status IN ('new_lead', 'surveying', 'installed')),
+  status TEXT DEFAULT 'new_lead',
   created_at TIMESTAMPTZ DEFAULT NOW()
 );
 ```
 
-### 4. Run Development
-
-```bash
-npm run dev
-```
-
-Open [http://localhost:3000](http://localhost:3000)
-
-## Project Structure
+## 📁 Project Structure
 
 ```
 src/
 ├── app/
-│   ├── (public)/           # Public pages with Navbar/Footer
-│   │   ├── layout.tsx
-│   │   ├── page.tsx        # Landing page
-│   │   └── daftar/         # Registration page
-│   ├── admin/              # Admin dashboard (no Navbar)
-│   │   ├── layout.tsx
-│   │   └── page.tsx
-│   ├── layout.tsx          # Root layout
-│   └── globals.css
-├── components/
-│   ├── Navbar.tsx
-│   ├── Hero.tsx
-│   ├── PricingCard.tsx
-│   ├── FAQ.tsx
-│   ├── Footer.tsx
-│   └── RegistrationForm.tsx
-├── lib/
-│   ├── supabase.ts         # Supabase client
-│   └── utils.ts            # Utility functions
-└── stores/
-    └── useAppStore.ts      # Zustand store
+│   ├── (public)/        # Pages with Navbar/Footer
+│   │   ├── page.tsx     # Landing page
+│   │   └── daftar/      # Registration
+│   ├── admin/           # Admin dashboard
+│   └── layout.tsx       # Root layout
+├── components/          # UI components
+├── lib/                 # Utilities & Supabase
+└── stores/              # Zustand stores
 ```
 
-## Deployment to Vercel
-
-1. Push to GitHub
-2. Import to Vercel
-3. Add environment variables
-4. Deploy
-
-## Routes
+## 📄 Routes
 
 | Route | Description |
 |-------|-------------|
@@ -119,6 +106,35 @@ src/
 | `/daftar` | Registration form |
 | `/admin` | Admin dashboard |
 
-## License
+## 💳 Paket Internet
 
-MIT
+| Paket | Speed | Harga |
+|-------|-------|-------|
+| Hemat | 5 Mbps | Rp150.000/bulan |
+| Keluarga | 10 Mbps | Rp200.000/bulan |
+| Pro | 20 Mbps | Rp250.000/bulan |
+
+**Biaya Instalasi:** Rp250.000 (sekali bayar)
+
+## 🚀 Deployment
+
+### Vercel (Recommended)
+
+1. Push to GitHub
+2. Import to Vercel
+3. Add environment variables
+4. Deploy!
+
+## 📞 Contact
+
+- **WhatsApp**: 085117088518
+- **Email**: info@whome.id
+- **Location**: Tanjung Priok, Jakarta
+
+## 📝 License
+
+MIT License - [LICENSE](LICENSE)
+
+---
+
+Made with ❤️ in Indonesia
