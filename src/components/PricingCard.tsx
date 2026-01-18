@@ -129,10 +129,10 @@ const staticPackages: Package[] = [
     {
         id: '1',
         name: 'Hemat',
-        speed_mbps: 5,
+        speed_mbps: 10,
         price: 150000,
         features: [
-            'Kecepatan hingga 5 Mbps',
+            'Kecepatan hingga 10 Mbps',
             'Unlimited Quota',
             'Support 24/7',
             'Cocok untuk 1-5 Device',
@@ -142,11 +142,11 @@ const staticPackages: Package[] = [
     {
         id: '2',
         name: 'Keluarga',
-        speed_mbps: 10,
+        speed_mbps: 15,
         price: 200000,
         is_popular: true,
         features: [
-            'Kecepatan hingga 10 Mbps',
+            'Kecepatan hingga 15 Mbps',
             'Unlimited Quota',
             'Support 24/7',
             'Cocok untuk 5-10 Device',

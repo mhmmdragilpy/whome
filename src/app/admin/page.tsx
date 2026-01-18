@@ -6,8 +6,8 @@ import { formatPrice } from '@/lib/utils';
 
 // Static packages for display
 const staticPackages: Record<string, Package> = {
-    '1': { id: '1', name: 'Hemat', speed_mbps: 5, price: 150000, features: [], created_at: '' },
-    '2': { id: '2', name: 'Keluarga', speed_mbps: 10, price: 200000, features: [], created_at: '' },
+    '1': { id: '1', name: 'Hemat', speed_mbps: 10, price: 150000, features: [], created_at: '' },
+    '2': { id: '2', name: 'Keluarga', speed_mbps: 15, price: 200000, features: [], created_at: '' },
     '3': { id: '3', name: 'Pro', speed_mbps: 20, price: 250000, features: [], created_at: '' },
 };
 
