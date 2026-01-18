@@ -6,8 +6,8 @@ Platform marketing digital untuk WHOME Internet Provider, RT/RW Net berbasis di 
 
 ## 🚀 Live Demo
 
-- **Website**: [whome.vercel.app](https://whome.vercel.app)
-- **Admin**: [whome.vercel.app/admin](https://whome.vercel.app/admin)
+- **Website**: [whome-provider.vercel.app](https://whome-provider.vercel.app)
+- **Admin*  *: [whome-provider.vercel.app/admin](https://whome-provider.vercel.app/admin)
 
 ## ✨ Features
 
