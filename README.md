@@ -1,36 +1,124 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# WHOME - Internet Provider Landing Page
+
+Platform marketing digital untuk WHOME Internet Provider, RT/RW Net berbasis di Tanjung Priok, Jakarta.
+
+## Tech Stack
+
+- **Framework**: Next.js 14 (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **Database**: Supabase
+- **State**: Zustand
+- **Deployment**: Vercel
+
+## Features
+
+- Landing page dengan hero section modern
+- Pricing cards untuk 3 paket internet
+- Form pendaftaran dengan integrasi WhatsApp
+- Admin dashboard untuk kelola leads
+- Responsive design (mobile-first)
 
 ## Getting Started
 
-First, run the development server:
+### 1. Clone & Install
+
+```bash
+git clone <repository-url>
+cd whome
+npm install
+```
+
+### 2. Environment Variables
+
+Buat file `.env.local`:
+
+```env
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+NEXT_PUBLIC_WHATSAPP_ADMIN=6285117088518
+```
+
+### 3. Database Setup
+
+Jalankan SQL berikut di Supabase SQL Editor:
+
+```sql
+-- Create tables
+CREATE TABLE packages (
+  id TEXT PRIMARY KEY,
+  name TEXT NOT NULL,
+  speed_mbps INTEGER NOT NULL,
+  price INTEGER NOT NULL,
+  features TEXT[] DEFAULT '{}',
+  is_popular BOOLEAN DEFAULT false,
+  created_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+CREATE TABLE leads (
+  id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+  full_name TEXT NOT NULL,
+  whatsapp TEXT NOT NULL,
+  address TEXT NOT NULL,
+  latitude DOUBLE PRECISION,
+  longitude DOUBLE PRECISION,
+  package_id TEXT NOT NULL,
+  status TEXT DEFAULT 'new_lead' CHECK (status IN ('new_lead', 'surveying', 'installed')),
+  created_at TIMESTAMPTZ DEFAULT NOW()
+);
+```
+
+### 4. Run Development
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+src/
+├── app/
+│   ├── (public)/           # Public pages with Navbar/Footer
+│   │   ├── layout.tsx
+│   │   ├── page.tsx        # Landing page
+│   │   └── daftar/         # Registration page
+│   ├── admin/              # Admin dashboard (no Navbar)
+│   │   ├── layout.tsx
+│   │   └── page.tsx
+│   ├── layout.tsx          # Root layout
+│   └── globals.css
+├── components/
+│   ├── Navbar.tsx
+│   ├── Hero.tsx
+│   ├── PricingCard.tsx
+│   ├── FAQ.tsx
+│   ├── Footer.tsx
+│   └── RegistrationForm.tsx
+├── lib/
+│   ├── supabase.ts         # Supabase client
+│   └── utils.ts            # Utility functions
+└── stores/
+    └── useAppStore.ts      # Zustand store
+```
 
-## Learn More
+## Deployment to Vercel
 
-To learn more about Next.js, take a look at the following resources:
+1. Push to GitHub
+2. Import to Vercel
+3. Add environment variables
+4. Deploy
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Routes
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+| Route | Description |
+|-------|-------------|
+| `/` | Landing page |
+| `/daftar` | Registration form |
+| `/admin` | Admin dashboard |
 
-## Deploy on Vercel
+## License
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+MIT
