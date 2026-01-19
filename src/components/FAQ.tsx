@@ -12,7 +12,7 @@ export default function FAQ() {
         },
         {
             question: 'Apakah ada biaya instalasi?',
-            answer: 'Ya, biaya instalasi adalah Rp250.000 (sekali bayar). Biaya ini sudah termasuk pemasangan perangkat dan aktivasi layanan. Setelah itu, Anda hanya perlu membayar biaya berlangganan bulanan sesuai paket yang dipilih.',
+            answer: 'Ya, biaya instalasi adalah Rp250.000 (sekali bayar). Biaya ini sudah termasuk pemasangan perangkat dan aktivasi layanan. Setelah itu, setiap tanggal 5 Anda hanya perlu membayar biaya bulanan sesuai paket yang dipilih.',
         },
         {
             question: 'Bagaimana cara pembayaran?',
