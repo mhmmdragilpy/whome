@@ -118,6 +118,6 @@ Project ini didistribusikan di bawah lisensi MIT. Lihat file `LICENSE` untuk inf
 
 ---
 
-<center>
-  <p>Dikembangkan dengan ❤️ oleh <b>mhmmdragilpy</b></p>
-</center>
+## 👤 Author
+
+Developed with ❤️ by **Mang Do-san**

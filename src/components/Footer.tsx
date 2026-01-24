@@ -127,8 +127,8 @@ export default function Footer() {
                             © {currentYear} WHOME Internet. All rights reserved.
                         </p>
                         <div className="flex items-center gap-2 text-white/40 text-sm">
-                            <span>Developed by</span>
-                            <span className="text-primary font-semibold">RajailDev™</span>
+                            <span>Developed with ❤️ by</span>
+                            <span className="text-primary font-semibold">Mang Do-san</span>
                         </div>
                     </div>
                 </div>
