@@ -20,7 +20,7 @@ const orbitron = Orbitron({
 
 export const metadata: Metadata = {
   title: "WHOME - Internet Rumah Cepat & Stabil",
-  description: "Penyedia layanan internet rumah terpercaya dengan koneksi cepat dan stabil. Paket mulai dari Rp150.000/bulan dengan kecepatan hingga 20 Mbps.",
+  description: "Penyedia layanan internet rumah terpercaya dengan koneksi cepat dan stabil. Paket mulai dari Rp150.000/bulan dengan kecepatan hingga 25 Mbps.",
   keywords: ["internet rumah", "wifi rumah", "provider internet", "WHOME", "internet cepat", "internet murah"],
   authors: [{ name: "WHOME" }],
   openGraph: {
